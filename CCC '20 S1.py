@@ -11,6 +11,7 @@ for i in range (Inputs):
 def get_time(dict):
     return dict['time']
 
+# Hash table sort, ["15": 2], ["2": 3] -> ["2": 3], ["15": 2]
 Observations.sort(key = get_time)
 
 fastestSpeed = 0;
