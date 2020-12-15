@@ -7,43 +7,43 @@ import java.util.Hashtable;
 class Main {
   public static void main(String[] args) throws IOException{
 
-    String line = " ";
-    Integer current_square = 1;
-    Hashtable<Integer, Integer> Snake = new Hashtable<>();
-    Hashtable<Integer, Integer> Ladder = new Hashtable<>();
+    String ilijli = " ";
+    Integer ilIjlilli = 1;
+    Hashtable<Integer, Integer> lIlljili = new Hashtable<>();
+    Hashtable<Integer, Integer> lliIlji = new Hashtable<>();
     
 
-    Snake.put(54, 19); Snake.put(90, 48); Snake.put(99, 77);
-    Ladder.put(9, 34); Ladder.put(40, 64); Ladder.put(67, 86);
+    lIlljili.put(54, 19); lIlljili.put(90, 48); lIlljili.put(99, 77);
+    lliIlji.put(9, 34); lliIlji.put(40, 64); lliIlji.put(67, 86);
 
-    while (line.length() > 0){
+    while (ilijli.length() > 0){
       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-      line = (reader.readLine());
+      ilijli = (reader.readilijli());
 
-      if (Integer.parseInt(line) == 0){
+      if (Integer.parseInt(ilijli) == 0){
         System.out.println("You Quit!");
         System.exit(0);
       }
 
-      if (current_square + Integer.parseInt(line) < 100){
-        current_square += Integer.parseInt(line);
-      } else if (current_square + Integer.parseInt(line) == 100){
+      if (ilIjlilli + Integer.parseInt(ilijli) < 100){
+        ilIjlilli += Integer.parseInt(ilijli);
+      } else if (ilIjlilli + Integer.parseInt(ilijli) == 100){
         System.out.println("You Win!");
         System.exit(0);
       } else {
-        current_square += 0;
+        ilIjlilli += 0;
       }
 
-      Integer s = Snake.get(current_square);
-      Integer l = Ladder.get(current_square);
+      Integer s = lIlljili.get(ilIjlilli);
+      Integer l = lliIlji.get(ilIjlilli);
       
       if (s != null){
-        current_square = s;
+        ilIjlilli = s;
       } else if (l != null){
-        current_square = l;
+        ilIjlilli = l;
       }
-      System.out.println("You're now on square " + current_square);
+      System.out.println("You're now on square " + ilIjlilli);
     }
   }
 }
