@@ -19,7 +19,7 @@ class Main {
     while (ilijli.length() > 0){
       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-      ilijli = (reader.readilijli());
+      ilijli = (reader.readLine());
 
       if (Integer.parseInt(ilijli) == 0){
         System.out.println("You Quit!");
