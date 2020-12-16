@@ -3,15 +3,8 @@ import sys
 input_storage = []
 grid = []
 
-# . = clear
-# # = blocked
-#  make current square #
-#   while true:
-#   while (grid[currentx + 1][currenty ] != "#""): currentx += 1
-#   while (grid[currentx][currenty + 1] != "#"): currenty += 1
-#   while (grid[currentx])
-
 def get_grid():
+  print("=" * len(grid[0]))
   for x in range (len(grid)):
     print(grid[x])
 
@@ -51,45 +44,54 @@ operation = 0
 grid[currenty][currentx] = "M"
 
 for x in range (input_storage[4]):
+  #get_grid()
   if (operation == 0):
-    if (grid[currenty][currentx + 1] != "#"):
+    if (grid[currenty][currentx + 1] != "#" and grid[currenty - 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
       currentx += 1
+      grid[currenty][currentx] = "M"
     elif (grid[currenty][currentx + 1] == "#" and grid[currenty + 1][currentx] != "#"):
       grid[currenty][currentx] = "#"
       currenty += 1
+      grid[currenty][currentx] = "M"
     else:
       operation = 1
   if (operation == 1):
     if (grid[currenty][currentx - 1] != "#" and grid[currenty + 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
       currentx -= 1
+      grid[currenty][currentx] = "M"
     elif (grid[currenty][currentx + 1] == "#" and grid[currenty + 1][currentx] != "#"):
       grid[currenty][currentx] = "#"
       currenty += 1
+      grid[currenty][currentx] = "M"
     else:
       operation = 2
   if (operation == 2):
     if (grid[currenty][currentx - 1] == "#" and grid[currenty - 1][currentx] != "#"):
       grid[currenty][currentx] = "#"
       currenty -= 1
+      grid[currenty][currentx] = "M"
     elif (grid[currenty][currentx - 1] != "#" and grid[currenty + 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
       currentx -= 1
+      grid[currenty][currentx] = "M"
     else:
       operation = 3
   if (operation == 3):
     if (grid[currenty][currentx + 1] != "#" and grid[currenty - 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
-      currentx += 1;
+      currentx += 1
+      grid[currenty][currentx] = "M"
     elif (grid[currenty - 1][currentx] != "#" and grid[currenty][currentx - 1] == "#"):
       grid[currenty][currentx] = "#"
-      currenty -= 1;
+      currenty -= 1
+      grid[currenty][currentx] = "M"
     else:
-      operation = 0;
+      operation = 0
 
 
 grid[currenty][currentx] = "M"
 print(currentx)
 print(currenty)
-get_grid()
+#get_grid()
