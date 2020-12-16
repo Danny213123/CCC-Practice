@@ -4,7 +4,7 @@ input_storage = []
 grid = []
 
 def get_grid():
-  print("=" * len(grid[0]))
+  #print("=" * len(grid[0]))
   for x in range (len(grid)):
     print(grid[x])
 
