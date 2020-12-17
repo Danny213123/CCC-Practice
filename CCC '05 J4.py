@@ -1,5 +1,3 @@
-import sys
-
 input_storage = []
 grid = []
 
@@ -42,54 +40,77 @@ total_moved = 0
 operation = 0
 
 grid[currenty][currentx] = "M"
+broken = 0
 
-for x in range (input_storage[4]):
-  #get_grid()
+while (total_moved != input_storage[4]):
+  past_x, past_y = currentx, currenty
   if (operation == 0):
     if (grid[currenty][currentx + 1] != "#" and grid[currenty - 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
+      total_moved+= 1
+      broken = 0
       currentx += 1
       grid[currenty][currentx] = "M"
     elif (grid[currenty][currentx + 1] == "#" and grid[currenty + 1][currentx] != "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currenty += 1
       grid[currenty][currentx] = "M"
     else:
+      broken += 1
       operation = 1
   if (operation == 1):
     if (grid[currenty][currentx - 1] != "#" and grid[currenty + 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currentx -= 1
       grid[currenty][currentx] = "M"
     elif (grid[currenty][currentx + 1] == "#" and grid[currenty + 1][currentx] != "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currenty += 1
       grid[currenty][currentx] = "M"
     else:
+      broken += 1
       operation = 2
   if (operation == 2):
     if (grid[currenty][currentx - 1] == "#" and grid[currenty - 1][currentx] != "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currenty -= 1
       grid[currenty][currentx] = "M"
     elif (grid[currenty][currentx - 1] != "#" and grid[currenty + 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currentx -= 1
       grid[currenty][currentx] = "M"
     else:
+      broken += 1
       operation = 3
   if (operation == 3):
     if (grid[currenty][currentx + 1] != "#" and grid[currenty - 1][currentx] == "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currentx += 1
       grid[currenty][currentx] = "M"
     elif (grid[currenty - 1][currentx] != "#" and grid[currenty][currentx - 1] == "#"):
       grid[currenty][currentx] = "#"
+      total_moved += 1
+      broken = 0
       currenty -= 1
       grid[currenty][currentx] = "M"
     else:
+      broken += 1
       operation = 0
-
+  if (broken > 4):
+    break
+    
 
 grid[currenty][currentx] = "M"
 print(currentx)
