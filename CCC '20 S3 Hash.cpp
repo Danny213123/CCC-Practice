@@ -20,7 +20,7 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	
   	string needle, haystack, cur_word, sorted_word;
-	int correct;
+	int correct = 0;
 	cin >> needle >> haystack;
 
 	map<char, int> char_needle, char_haystack, empty_stack;
