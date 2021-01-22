@@ -16,7 +16,10 @@ string is_perm (map<char, int> needle, map<char, int> haystack){
 }
 
 int main() {
-  string needle, haystack, cur_word, sorted_word;
+	
+	ios_base::sync_with_stdio(false);
+	
+  	string needle, haystack, cur_word, sorted_word;
 	int correct;
 	cin >> needle >> haystack;
 
