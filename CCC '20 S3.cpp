@@ -5,10 +5,14 @@
 using namespace std;
 
 int main() {
+	ios_base::sync_with_stdio(false);
+	
 	string needle, haystack, current, sorted, next;
 	int score = 0;
 	vector<string> total;
-  cin >> needle >> haystack;
+	
+  	cin >> needle >> haystack;
+	
 	string fi = needle;
 
 	for (int x = 0; x < haystack.size() - needle.size() + 1; x++){
