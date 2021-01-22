@@ -1,26 +1,15 @@
-from sys import stdin, stdout
-from sympy import factorint, primefactors
-from itertools import permutations
-import numpy as np
+import sys
 
-rows = int(stdin.readline())
-cols = int(stdin.readline())
+row = int(input())
+col = int(input())
 
-k = []
+graph = []
+temp = []
 
-for y in range(rows):
-  k.append(stdin.readline().split())
+for y in range (col - 1):
+	a = input()
+	temp.append(a)
+graph.append(temp)
 
-startx, starty = 0, 0
-endx, endy = cols - 1, rows - 1
-currentx, currenty = endx, endy
-
-while (currentx != 0 and currenty != 0):
-  currentsquare = int(k[currenty][currentx])
-  goto = (currentx + 1) * (currenty + 1)
-
-  array = np.array(k)
-
-  locations = np.argwhere(array == str(goto))
-
-  print(locations)
+for x in range (row - 1):
+	print(graph[x])
