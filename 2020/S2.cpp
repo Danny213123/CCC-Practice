@@ -65,7 +65,7 @@ int main() {
 
 						graph_pos = graph[x][y];
 
-						if (graph_pos == SIZE){
+						if (x * y == SIZE){
 							cout << "yes";
 							return 0;
 						}
@@ -77,7 +77,7 @@ int main() {
 						}
 						//print(graph[x][y], possible_path[possible_path_pos], possible_path_pos);
 						if( (y+1) > possible_path[possible_path_pos]/x){
-              break;
+              						break;
 						}
 					}
 				}
